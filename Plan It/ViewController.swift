@@ -2,11 +2,12 @@
 //  ViewController.swift
 //  Plan It
 //
-//  Created by Benjamin Chan on 3/8/17.
-//  Copyright © 2017 Benjamin Chan. All rights reserved.
+//  Created by LUL MEME LUL on 3/08/2017.
+//  Copyright © 2017 LUL MEME LUL. All rights reserved.
 //
 
 import UIKit
+import EventKit
 
 class ViewController: UIViewController {
 
