@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270130D71E76F9CB005F19C9 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270130D61E76F9CB005F19C9 /* DayCell.swift */; };
+		270130F91E7978F3005F19C9 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270130F81E7978F3005F19C9 /* Day.swift */; };
+		270130FB1E79A57C005F19C9 /* DayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270130FA1E79A57C005F19C9 /* DayStore.swift */; };
+		2753E5431E70864B008B2FA1 /* WeeklyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2753E5421E70864B008B2FA1 /* WeeklyViewController.swift */; };
 		27FA6AFF1E70811E00D121B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FA6AFE1E70811E00D121B9 /* AppDelegate.swift */; };
 		27FA6B011E70811E00D121B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FA6B001E70811E00D121B9 /* ViewController.swift */; };
 		27FA6B041E70811E00D121B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27FA6B021E70811E00D121B9 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		270130D61E76F9CB005F19C9 /* DayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
+		270130F81E7978F3005F19C9 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		270130FA1E79A57C005F19C9 /* DayStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayStore.swift; sourceTree = "<group>"; };
+		2753E5421E70864B008B2FA1 /* WeeklyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyViewController.swift; sourceTree = "<group>"; };
 		27FA6AFB1E70811E00D121B9 /* Plan It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plan It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FA6AFE1E70811E00D121B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27FA6B001E70811E00D121B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +64,10 @@
 			children = (
 				27FA6AFE1E70811E00D121B9 /* AppDelegate.swift */,
 				27FA6B001E70811E00D121B9 /* ViewController.swift */,
+				2753E5421E70864B008B2FA1 /* WeeklyViewController.swift */,
+				270130FA1E79A57C005F19C9 /* DayStore.swift */,
+				270130D61E76F9CB005F19C9 /* DayCell.swift */,
+				270130F81E7978F3005F19C9 /* Day.swift */,
 				27FA6B021E70811E00D121B9 /* Main.storyboard */,
 				27FA6B051E70811E00D121B9 /* Assets.xcassets */,
 				27FA6B071E70811E00D121B9 /* LaunchScreen.storyboard */,
@@ -137,7 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2753E5431E70864B008B2FA1 /* WeeklyViewController.swift in Sources */,
 				27FA6B011E70811E00D121B9 /* ViewController.swift in Sources */,
+				270130D71E76F9CB005F19C9 /* DayCell.swift in Sources */,
+				270130F91E7978F3005F19C9 /* Day.swift in Sources */,
+				270130FB1E79A57C005F19C9 /* DayStore.swift in Sources */,
 				27FA6AFF1E70811E00D121B9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +318,7 @@
 				27FA6B0F1E70811E00D121B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
