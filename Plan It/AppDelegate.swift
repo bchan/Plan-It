@@ -41,6 +41,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+}
 
+func ==(left: Day, right: Day) -> Bool {
+    if left.date == right.date && left.date == right.date {
+        return true
+    } else {
+        return false
+    }
 }
 

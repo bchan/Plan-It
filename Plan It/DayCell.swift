@@ -14,11 +14,7 @@ class DayCell: UITableViewCell {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var dayOfTheWeek: UILabel!
     @IBOutlet var previewLabel: UILabel!
-    
-    
-    
-    
-    
-    
-    
+
+    var date = NSDate()
+
 }

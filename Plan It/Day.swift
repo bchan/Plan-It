@@ -9,14 +9,12 @@
 import Foundation
 import UIKit
 
-class Day: NSObject {
+class Day: Equatable {
     
-    let date: NSDate
+    let date: Date
     
-    init(date: String) {
-        let d = DateFormatter()
-        self.date = d.date(from: date)! as NSDate
+    init(_ date: Date) {
+        self.date = date
     }
-    
     
 }
