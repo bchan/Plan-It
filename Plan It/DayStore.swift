@@ -33,9 +33,11 @@ class DayStore {
         let calendar = Calendar(identifier: .gregorian)
         let components = NSDateComponents()
         if !isDayInArray(date: date) {
+            let sunday = getSundaysDate(date: date)
+            allDays.append(Day(sunday))
             for i in 1...6 {
                 components.day = i
-                let newDay = calendar.date(byAdding: components as DateComponents, to: getSundaysDate(date: date))!
+                let newDay = calendar.date(byAdding: components as DateComponents, to: sunday)!
                 allDays.append(Day(newDay))
             }
         }
