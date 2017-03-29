@@ -44,7 +44,8 @@ class DayStore {
     }
     
     func isDayInArray(date: Date) -> Bool {
-        return allDays.contains(Day(date))
+        let sunday = getSundaysDate(date: date)
+        return allDays.contains(Day(sunday))
     }
     
     
