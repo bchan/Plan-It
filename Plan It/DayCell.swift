@@ -2,8 +2,8 @@
 //  DayCell.swift
 //  Plan It
 //
-//  Created by Benjamin Chan on 3/13/17.
-//  Copyright © 2017 Benjamin Chan. All rights reserved.
+//  Created on 3/13/2017.
+//  Copyright © 2017. All rights reserved.
 //
 
 import Foundation
@@ -13,7 +13,7 @@ class DayCell: UITableViewCell {
     
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var dayOfTheWeek: UILabel!
-    @IBOutlet var previewLabel: UILabel!
+    //@IBOutlet var previewLabel: UILabel!
 
     var date = NSDate()
 

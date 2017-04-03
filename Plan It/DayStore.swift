@@ -2,8 +2,8 @@
 //  DayStore.swift
 //  Plan It
 //
-//  Created by Benjamin Chan on 3/15/17.
-//  Copyright © 2017 Benjamin Chan. All rights reserved.
+//  Created on 3/15/2017.
+//  Copyright © 2017. All rights reserved.
 //
 
 import Foundation
@@ -48,7 +48,10 @@ class DayStore {
         return allDays.contains(Day(sunday))
     }
     
+    let date1 = Date()
     
-    
+    init() {
+        addWeek(date: date1)
+    }
     
 }

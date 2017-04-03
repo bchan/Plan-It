@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  Plan It
 //
-//  Created by LUL MEME LUL on 3/08/2017.
-//  Copyright © 2017 LUL MEME LUL. All rights reserved.
+//  Created on 3/08/2017.
+//  Copyright © 2017. All rights reserved.
 //
 
 import UIKit
