@@ -40,6 +40,8 @@ class WeeklyViewController: UITableViewController {
         // will appear in on the tableview
         let item = dayStore.allDays[indexPath.row]
         
+        navigationItem.title = "\(item.month) \(String(item.dateNumber - 6)) - \(item.month) \(String(item.dateNumber))"
+    
         cell.textLabel?.text = String(item.dateNumber)
         cell.detailTextLabel?.text = item.dayOfWeek
         

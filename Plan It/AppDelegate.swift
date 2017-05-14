@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let dayStore = DayStore()
         
-        let weeklyController = window!.rootViewController as! WeeklyViewController
+        let weeklyController = window!.rootViewController?.childViewControllers[0] as! WeeklyViewController
         weeklyController.dayStore = dayStore
         
         return true
