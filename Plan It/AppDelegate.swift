@@ -17,8 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let dayStore = DayStore()
+        let tabBarViewController = window!.rootViewController
+        let navController = tabBarViewController?.childViewControllers[0]
         
-        let weeklyController = window!.rootViewController?.childViewControllers[0] as! WeeklyViewController
+        let weeklyController = navController?.childViewControllers[0] as! WeeklyViewController
         weeklyController.dayStore = dayStore
         
         return true

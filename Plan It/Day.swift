@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Day: NSObject {
+class Day: Equatable, CustomStringConvertible {
     
     let date: Date
     
@@ -58,6 +58,10 @@ class Day: NSObject {
         case 12: return "December"
         default: return "someone is retarded!"
         }
+    }
+    
+    var description: String {
+        return "\(date)"
     }
 
     

@@ -13,16 +13,20 @@ import UIKit
 class WeeklyViewController: UITableViewController {
         
     var dayStore: DayStore!
+    var currentWeek = [Day]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Get the height of the status bar
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+//        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+//        
+//        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
+//        tableView.contentInset = insets
+//        tableView.scrollIndicatorInsets = insets
         
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
+        dayStore.addWeek(date: Date())
+        currentWeek = dayStore.getWeek(date: Date())
     }
     
     
@@ -39,8 +43,9 @@ class WeeklyViewController: UITableViewController {
         // that is at the nth index of items, where n = row this cell
         // will appear in on the tableview
         let item = dayStore.allDays[indexPath.row]
+        let sunday = Day(dayStore.getSundaysDate(date: item.date))
         
-        navigationItem.title = "\(item.month) \(String(item.dateNumber - 6)) - \(item.month) \(String(item.dateNumber))"
+        navigationItem.title = "\(sunday.month) \(String(sunday.dateNumber)) - \(item.month) \(String(item.dateNumber))"
     
         cell.textLabel?.text = String(item.dateNumber)
         cell.detailTextLabel?.text = item.dayOfWeek

@@ -48,10 +48,10 @@ class DayStore {
         return allDays.contains(Day(sunday))
     }
     
-    let date1 = Date()
-    
-    init() {
-        addWeek(date: date1)
-    }
+//    let date1 = Date()
+//    
+//    init() {
+//        addWeek(date: date1)
+//    }
     
 }
