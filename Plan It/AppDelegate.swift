@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let weeklyController = navController?.childViewControllers[0] as! WeeklyViewController
         weeklyController.dayStore = dayStore
+        weeklyController.tabBarVC = tabBarViewController as! UITabBarController
         
         return true
     }

@@ -14,6 +14,7 @@ class WeeklyViewController: UITableViewController {
         
     var dayStore: DayStore!
     var currentWeek = [Day]()
+    var tabBarVC: UITabBarController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,39 @@ class WeeklyViewController: UITableViewController {
         return cell
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDay" {
+            let backItem = UIBarButtonItem()
+            let dailyVC = segue.destination as! DailyViewController
+            let indexPath = self.tableView.indexPathForSelectedRow
+            
+            if dailyVC.today == dayStore.allDays[indexPath!.row] {
+                tabBarVC.selectedIndex = 1
+            } else {
+                dailyVC.currentDay = dayStore.allDays[indexPath!.row]
+                backItem.title = "Week"
+                navigationItem.backBarButtonItem = backItem
+            }
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "showDay" {
+            let indexPath = self.tableView.indexPathForSelectedRow
+            let calendar = Calendar(identifier: .gregorian)
+            let now = Date()
+            var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: now)
+            components.hour = 0
+            components.minute = 0
+            components.second = 0
+            let today = Day(calendar.date(from: components)!)
+            if today == dayStore.allDays[indexPath!.row] {
+                tabBarVC.selectedIndex = 1
+                return false
+            }
+        }
+        return true
+    }
 
 
     

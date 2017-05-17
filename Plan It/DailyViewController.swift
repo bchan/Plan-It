@@ -12,11 +12,20 @@ import UIKit
 class DailyViewController : UITableViewController {
     
     var today = Day(Date())
+    var currentDay: Day?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let day = currentDay {
+            navigationItem.title = "\(day.month) \(String(day.dateNumber))"
+        } else {
+            navigationItem.title = "\(today.month) \(String(today.dateNumber))"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "\(today.month) \(String(today.dateNumber))"
+        
 
         
         // Get the height of the status bar
