@@ -60,13 +60,10 @@ class WeeklyViewController: UITableViewController {
             let dailyVC = segue.destination as! DailyViewController
             let indexPath = self.tableView.indexPathForSelectedRow
             
-            if dailyVC.today == dayStore.allDays[indexPath!.row] {
-                tabBarVC.selectedIndex = 1
-            } else {
-                dailyVC.currentDay = dayStore.allDays[indexPath!.row]
-                backItem.title = "Week"
-                navigationItem.backBarButtonItem = backItem
-            }
+            dailyVC.currentDay = dayStore.allDays[indexPath!.row]
+            backItem.title = "Week"
+            navigationItem.backBarButtonItem = backItem
+            
         }
     }
     
