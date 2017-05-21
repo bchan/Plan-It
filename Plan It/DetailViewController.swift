@@ -61,9 +61,9 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         event.date = datePicker.date
     }
     
-//    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
-//        view.endEditing(true)
-//    }
+    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     
     
     

@@ -222,7 +222,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dcZ-Ul-WSn">
-                                <rect key="frame" x="16" y="72" width="343" height="370"/>
+                                <rect key="frame" x="16" y="28" width="343" height="370"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MID-gI-CKw">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -307,11 +307,15 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="dcZ-Ul-WSn" firstAttribute="leading" secondItem="cow-ug-RMy" secondAttribute="leadingMargin" id="46b-Kt-Jq3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dcZ-Ul-WSn" secondAttribute="trailing" id="8g5-al-Aej"/>
                             <constraint firstItem="dcZ-Ul-WSn" firstAttribute="top" secondItem="7b2-Ll-YYK" secondAttribute="bottom" constant="8" id="D8w-R5-Jm0"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Qs1-z5-wx9" appends="YES" id="LPB-4r-GmL"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="alarmSwitch" destination="ZYb-NM-zrI" id="kAe-24-nCU"/>
@@ -322,6 +326,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PAx-kf-d7V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Qs1-z5-wx9">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="eUI-c2-Hrt" id="UFY-2n-5KE"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1841" y="1270"/>
         </scene>
