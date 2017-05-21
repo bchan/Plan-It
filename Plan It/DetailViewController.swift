@@ -32,6 +32,15 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
             if let locField = self.locationField {
                 locField.text = detail.location
             }
+            if let alaSwitch = self.alarmSwitch {
+                alaSwitch.isOn = detail.alarm
+            }
+            if let impoSwitch = self.importantSwitch {
+                impoSwitch.isOn = detail.important
+            }
+            if let datePick = self.datePicker {
+                datePick.date = detail.date
+            }
         }
     }
     
