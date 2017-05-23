@@ -30,4 +30,5 @@ class Event: NSObject {
         return "name: \(name); date: \(date); location: \(location); important: \(important); alarm: \(alarm)"
     }
 
+    
 }
