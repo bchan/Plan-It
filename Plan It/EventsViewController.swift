@@ -46,6 +46,7 @@ class EventsViewController : UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell",
                                                  for: indexPath as IndexPath) as! EventCell
+        cell.selectionStyle = .none
         
         
         // Set the text on the cell with the description of the item
