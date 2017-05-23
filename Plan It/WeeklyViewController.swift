@@ -45,8 +45,12 @@ class WeeklyViewController: UITableViewController {
         // will appear in on the tableview
         let item = dayStore.allDays[indexPath.row]
         let sunday = Day(dayStore.getSundaysDate(date: item.date))
+        let calendar = Calendar(identifier: .gregorian)
+        var components = calendar.dateComponents([.day], from: item.date)
+        components.day = 6
+        let endDay = Day(calendar.date(byAdding: components , to: sunday.date)!)
         
-        navigationItem.title = "\(sunday.month) \(String(sunday.dateNumber)) - \(item.month) \(String(item.dateNumber))"
+        navigationItem.title = "\(sunday.month) \(String(sunday.dateNumber)) - \(endDay.month) \(String(endDay.dateNumber))"
     
         cell.textLabel?.text = String(item.dateNumber)
         cell.detailTextLabel?.text = item.dayOfWeek
