@@ -82,16 +82,38 @@ class WeeklyViewController: UITableViewController {
             components.second = 0
             let today = Day(calendar.date(from: components)!)
             if today == dayStore.allDays[indexPath!.row] {
+                
+                tabBarVC.tabBarController(tabBarController: tabBarVC, shouldSelectViewController: tabBarVC.childViewControllers[1])
                 tabBarVC.selectedIndex = 1
                 return false
             }
         }
         return true
     }
-
-
+    
+    
+    
     
 }
+
+extension UITabBarController {
+    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) {
+        
+        let fromView: UIView = tabBarController.selectedViewController!.view
+        let toView  : UIView = viewController.view
+        if fromView == toView {
+            return
+        }
+        
+        UIView.transition(from: fromView, to: toView, duration: 0.3, options: UIViewAnimationOptions.curveEaseIn) { (finished:Bool) in
+            
+        }
+        return
+    }
+}
+
+    
+
 
 
 //    @IBAction func addNewItem(_ sender: AnyObject) {
