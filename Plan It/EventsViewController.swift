@@ -55,7 +55,7 @@ class EventsViewController : UITableViewController {
         let event = eventStore.allEvents[indexPath.row]
         
         cell.nameLabel.text = event.name
-        cell.dateLabel.text = dateFormatter.string(from: event.date)
+        cell.dateLabel.text = "\(dateFormatter.string(from: event.date)) to \(dateFormatter.string(from: event.endDate))"
         if event.important {
             cell.importantLabel.text = "!"
         } else {

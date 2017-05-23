@@ -14,10 +14,10 @@
 		27FA6AFF1E70811E00D121B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FA6AFE1E70811E00D121B9 /* AppDelegate.swift */; };
 		27FA6B011E70811E00D121B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FA6B001E70811E00D121B9 /* ViewController.swift */; };
 		27FA6B041E70811E00D121B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27FA6B021E70811E00D121B9 /* Main.storyboard */; };
-		27FA6B061E70811E00D121B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27FA6B051E70811E00D121B9 /* Assets.xcassets */; };
 		27FA6B091E70811E00D121B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27FA6B071E70811E00D121B9 /* LaunchScreen.storyboard */; };
 		647937A71ECCA4AE00527BAC /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647937A61ECCA4AE00527BAC /* DailyViewController.swift */; };
 		648C2A301ED2079600646D68 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648C2A2F1ED2079600646D68 /* DetailViewController.swift */; };
+		649675911ED4E7B500663ECD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 649675901ED4E7B500663ECD /* Assets.xcassets */; };
 		64EBBCDC1ECDEDAE00399AF0 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EBBCDB1ECDEDAE00399AF0 /* EventsViewController.swift */; };
 		64EBBCDE1ECE567A00399AF0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EBBCDD1ECE567A00399AF0 /* Event.swift */; };
 		64EBBCE01ECE58AD00399AF0 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EBBCDF1ECE58AD00399AF0 /* EventCell.swift */; };
@@ -33,11 +33,11 @@
 		27FA6AFE1E70811E00D121B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27FA6B001E70811E00D121B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		27FA6B031E70811E00D121B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		27FA6B051E70811E00D121B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27FA6B081E70811E00D121B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27FA6B0A1E70811E00D121B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		647937A61ECCA4AE00527BAC /* DailyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
 		648C2A2F1ED2079600646D68 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		649675901ED4E7B500663ECD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64EBBCDB1ECDEDAE00399AF0 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		64EBBCDD1ECE567A00399AF0 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		64EBBCDF1ECE58AD00399AF0 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 				64EBBCDF1ECE58AD00399AF0 /* EventCell.swift */,
 				64EBBCDB1ECDEDAE00399AF0 /* EventsViewController.swift */,
 				648C2A2F1ED2079600646D68 /* DetailViewController.swift */,
-				27FA6B051E70811E00D121B9 /* Assets.xcassets */,
+				649675901ED4E7B500663ECD /* Assets.xcassets */,
 				27FA6B071E70811E00D121B9 /* LaunchScreen.storyboard */,
 				27FA6B0A1E70811E00D121B9 /* Info.plist */,
 			);
@@ -155,7 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27FA6B091E70811E00D121B9 /* LaunchScreen.storyboard in Resources */,
-				27FA6B061E70811E00D121B9 /* Assets.xcassets in Resources */,
+				649675911ED4E7B500663ECD /* Assets.xcassets in Resources */,
 				27FA6B041E70811E00D121B9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
