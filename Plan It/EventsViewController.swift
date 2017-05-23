@@ -29,9 +29,6 @@ class EventsViewController : UITableViewController {
     }
     
     func deleteAlarmImage(label: UILabel) {
-        let attachment = NSTextAttachment()
-        attachment.image = UIImage(named: "quickaction_icon_alarm_2x.png")
-        let attachmentString = NSAttributedString(attachment: attachment)
         let myString = NSMutableAttributedString(string: "")
         label.attributedText = myString
 
