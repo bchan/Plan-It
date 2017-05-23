@@ -29,7 +29,7 @@ class EventStore {
     }
     
     @discardableResult func createEvent()-> Event {
-        let newEvent = Event(name: "untitled", date: Date(), location: "", important: false, alarm: false)
+        let newEvent = Event(name: "", date: Date(), location: "", important: false, alarm: false, endDate: Date(), repeating: false)
         
         allEvents.append(newEvent)
         
