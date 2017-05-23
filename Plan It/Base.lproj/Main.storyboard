@@ -82,7 +82,7 @@
         <scene sceneID="mKM-AL-5Jn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1pr-qq-vNs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Weekly" id="UAt-nn-7QE"/>
+                    <tabBarItem key="tabBarItem" title="Weekly" image="Webp.net-resizeimage" selectedImage="Webp.net-resizeimage" id="UAt-nn-7QE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="k0Z-20-FBW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -143,14 +143,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNt-iS-6vm">
-                                            <rect key="frame" x="50" y="8" width="175" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7oo-yc-QLq">
-                                            <rect key="frame" x="50" y="70" width="155" height="21"/>
+                                            <rect key="frame" x="13" y="4" width="209" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -163,16 +156,23 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3V8-4x-rsA">
-                                            <rect key="frame" x="50" y="37" width="142" height="21"/>
+                                            <rect key="frame" x="50" y="37" width="226" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alarm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIG-wj-OFI">
-                                            <rect key="frame" x="257" y="8" width="90" height="21"/>
+                                            <rect key="frame" x="257" y="4" width="90" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7oo-yc-QLq">
+                                            <rect key="frame" x="13" y="70" width="315" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -221,8 +221,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dcZ-Ul-WSn">
-                                <rect key="frame" x="16" y="28" width="343" height="370"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dcZ-Ul-WSn">
+                                <rect key="frame" x="16" y="28" width="343" height="579"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MID-gI-CKw">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -242,7 +242,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3ax-nW-xY5">
-                                        <rect key="frame" x="0.0" y="38" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="35" width="343" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7o-cf-cFI">
                                                 <rect key="frame" x="0.0" y="0.0" width="65.5" height="30"/>
@@ -259,7 +259,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MxL-ut-ggf">
-                                        <rect key="frame" x="0.0" y="76" width="343" height="31"/>
+                                        <rect key="frame" x="0.0" y="70" width="343" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Important" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcC-iw-hTN">
                                                 <rect key="frame" x="0.0" y="0.0" width="286" height="31"/>
@@ -273,7 +273,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="H7g-9S-fr4">
-                                        <rect key="frame" x="0.0" y="115" width="343" height="31"/>
+                                        <rect key="frame" x="0.0" y="106" width="343" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZL-aJ-GAu">
                                                 <rect key="frame" x="0.0" y="0.0" width="286" height="31"/>
@@ -287,7 +287,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BOI-RV-SEb">
-                                        <rect key="frame" x="0.0" y="154" width="343" height="216"/>
+                                        <rect key="frame" x="0.0" y="142" width="343" height="216"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0G-wG-wdo">
                                                 <rect key="frame" x="0.0" y="0.0" width="38" height="216"/>
@@ -299,6 +299,23 @@
                                                 <rect key="frame" x="46" y="0.0" width="297" height="216"/>
                                                 <date key="date" timeIntervalSinceReferenceDate="517081966.60794002">
                                                     <!--2017-05-21 17:52:46 +0000-->
+                                                </date>
+                                            </datePicker>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XqT-Lh-USH">
+                                        <rect key="frame" x="0.0" y="363" width="343" height="216"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMB-DP-NYl">
+                                                <rect key="frame" x="0.0" y="0.0" width="29.5" height="216"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="1FP-tB-TLS">
+                                                <rect key="frame" x="37.5" y="0.0" width="305.5" height="216"/>
+                                                <date key="date" timeIntervalSinceReferenceDate="517267576.58346802">
+                                                    <!--2017-05-23 21:26:16 +0000-->
                                                 </date>
                                             </datePicker>
                                         </subviews>
@@ -320,6 +337,7 @@
                     <connections>
                         <outlet property="alarmSwitch" destination="ZYb-NM-zrI" id="kAe-24-nCU"/>
                         <outlet property="datePicker" destination="OC2-0U-0Pq" id="o00-uf-PIn"/>
+                        <outlet property="datePicker2" destination="1FP-tB-TLS" id="akQ-fa-n0a"/>
                         <outlet property="importantSwitch" destination="CNl-9z-CyL" id="tca-M7-m1s"/>
                         <outlet property="locationField" destination="MXr-E6-pG6" id="WuB-Ld-HHO"/>
                         <outlet property="nameTextField" destination="BHU-gP-TEX" id="XuR-AA-5Tk"/>
@@ -338,7 +356,7 @@
         <scene sceneID="G0u-jc-f1H">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k8r-xa-wEu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Daily" id="YwC-y5-4RH"/>
+                    <tabBarItem key="tabBarItem" title="Daily" image="quickaction_icon_date_2x" selectedImage="quickaction_icon_date_2x" id="YwC-y5-4RH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QCP-Kq-arN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -357,7 +375,7 @@
         <scene sceneID="FnP-U6-bx5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3cf-Bf-TRA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Events" id="vrl-JD-2Vo"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="quickaction_icon_confirmation_2x" selectedImage="quickaction_icon_confirmation_2x" id="vrl-JD-2Vo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AUV-CT-fmc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -373,7 +391,12 @@
             <point key="canvasLocation" x="28" y="1269.7151424287856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Webp.net-resizeimage" width="28" height="27"/>
+        <image name="quickaction_icon_confirmation_2x" width="28" height="27"/>
+        <image name="quickaction_icon_date_2x" width="28" height="27"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b9u-2R-1Vq"/>
+        <segue reference="pFD-np-zhC"/>
     </inferredMetricsTieBreakers>
 </document>

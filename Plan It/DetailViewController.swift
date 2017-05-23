@@ -16,6 +16,7 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
     @IBOutlet var alarmSwitch: UISwitch!
     @IBOutlet var importantSwitch: UISwitch!
     @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet var datePicker2: UIDatePicker!
     
     var event: Event! {
         didSet {
@@ -41,6 +42,9 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
             if let datePick = self.datePicker {
                 datePick.date = detail.date
             }
+            if let datePick2 = self.datePicker2 {
+                datePick2.date = detail.endDate
+            }
         }
     }
     
@@ -59,6 +63,7 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         event.important = importantSwitch.isOn
         event.alarm = alarmSwitch.isOn
         event.date = datePicker.date
+        event.endDate = datePicker2.date
         
         
     }
