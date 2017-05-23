@@ -50,7 +50,7 @@ class WeeklyViewController: UITableViewController {
         components.day = 6
         let endDay = Day(calendar.date(byAdding: components , to: sunday.date)!)
         
-        navigationItem.title = "\(sunday.month) \(String(sunday.dateNumber)) - \(endDay.month) \(String(endDay.dateNumber))"
+        navigationItem.title = "Week of \(sunday.month) \(String(sunday.dateNumber)) - \(endDay.month) \(String(endDay.dateNumber))"
     
         cell.textLabel?.text = String(item.dateNumber)
         cell.detailTextLabel?.text = item.dayOfWeek
@@ -83,8 +83,12 @@ class WeeklyViewController: UITableViewController {
             let today = Day(calendar.date(from: components)!)
             if today == dayStore.allDays[indexPath!.row] {
                 
-                tabBarVC.tabBarController(tabBarController: tabBarVC, shouldSelectViewController: tabBarVC.childViewControllers[1])
+                
+//                tabBarVC.tabBarController(tabBarController: tabBarVC, shouldSelectViewController: tabBarVC.childViewControllers[1])
+
                 tabBarVC.selectedIndex = 1
+                
+                
                 return false
             }
         }
@@ -92,25 +96,24 @@ class WeeklyViewController: UITableViewController {
     }
     
     
-    
-    
 }
 
-extension UITabBarController {
-    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) {
-        
-        let fromView: UIView = tabBarController.selectedViewController!.view
-        let toView  : UIView = viewController.view
-        if fromView == toView {
-            return
-        }
-        
-        UIView.transition(from: fromView, to: toView, duration: 0.3, options: UIViewAnimationOptions.curveEaseIn) { (finished:Bool) in
-            
-        }
-        return
-    }
-}
+//extension UITabBarController {
+//    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) {
+//        
+//        let fromView: UIView = tabBarController.selectedViewController!.view
+//        let toView  : UIView = viewController.view
+//        if fromView == toView {
+//            return
+//        }
+//        
+//        UIView.transition(from: fromView, to: toView, duration: 0.4, options: UIViewAnimationOptions.transitionCrossDissolve) { (finished:Bool) in
+//            
+//        }
+//        
+//        return
+//    }
+//}
 
     
 
