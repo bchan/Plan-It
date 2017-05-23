@@ -13,6 +13,30 @@ class EventsViewController : UITableViewController {
     
     var eventStore: EventStore!
     var editIndexPath: IndexPath?
+    
+    
+    
+    
+    
+    
+    func addAlarmImage(label: UILabel) {
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(named: "quickaction_icon_alarm_2x.png")
+        let attachmentString = NSAttributedString(attachment: attachment)
+        let myString = NSMutableAttributedString(string: "")
+        myString.append(attachmentString)
+        label.attributedText = myString
+    }
+    
+    func deleteAlarmImage(label: UILabel) {
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(named: "quickaction_icon_alarm_2x.png")
+        let attachmentString = NSAttributedString(attachment: attachment)
+        let myString = NSMutableAttributedString(string: "")
+        label.attributedText = myString
+
+    }
+    
     //    var tabBarVC: UITabBarController!
     
     override func viewDidLoad() {
@@ -21,7 +45,7 @@ class EventsViewController : UITableViewController {
         
         self.tableView.rowHeight = 100.0
         
-        eventStore = EventStore()
+        //eventStore = EventStore()
         
 //        tableView.rowHeight = UITableViewAutomaticDimension
 //        tableView.estimatedRowHeight = 100
@@ -63,8 +87,10 @@ class EventsViewController : UITableViewController {
         }
         if event.alarm {
             cell.alarmLabel.text = "Alarm On"
+            addAlarmImage(label: cell.alarmImage)
         } else {
             cell.alarmLabel.text = "Alarm Off"
+            deleteAlarmImage(label: cell.alarmImage)
         }
         cell.locationLabel.text = event.location
 

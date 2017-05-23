@@ -16,6 +16,7 @@ class EventCell : UITableViewCell {
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var importantLabel: UILabel!
     @IBOutlet var alarmLabel: UILabel!
+    @IBOutlet var alarmImage: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
