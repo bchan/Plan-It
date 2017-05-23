@@ -59,6 +59,8 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         event.important = importantSwitch.isOn
         event.alarm = alarmSwitch.isOn
         event.date = datePicker.date
+        
+        
     }
     
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {

@@ -16,6 +16,8 @@ class EventCell : UITableViewCell {
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var importantLabel: UILabel!
     @IBOutlet var alarmLabel: UILabel!
+    @IBOutlet var repeatingLabel: UILabel!
+    @IBOutlet var endDateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

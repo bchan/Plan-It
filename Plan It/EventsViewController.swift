@@ -29,7 +29,7 @@ class EventsViewController : UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        eventStore.allEvents.sort(by: {$0.date.compare($1.date) == .orderedAscending})
         tableView.reloadData()
     }
     
@@ -55,7 +55,7 @@ class EventsViewController : UITableViewController {
         let event = eventStore.allEvents[indexPath.row]
         
         cell.nameLabel.text = event.name
-        cell.dateLabel.text = String(describing: event.date)
+        cell.dateLabel.text = dateFormatter.string(from: event.date)
         if event.important {
             cell.importantLabel.text = "!"
         } else {
@@ -71,18 +71,34 @@ class EventsViewController : UITableViewController {
         return cell
     }
     
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+//        formatter.dateStyle = .medium
+        formatter.dateFormat = "dd MMM yyyy HH:mm"
+        return formatter
+    }()
+    
     @IBAction func addNewItem(sender: AnyObject) {
         // Create a new Item and add it to the store
-//        print(eventStore)
-        let newItem = eventStore.createEvent()
+//        let newItem = eventStore.createEvent()
+//        var saveIndex = NSIndexPath()
+//        
+//        // Figure out where that item is in the array
+//        if let index = eventStore.allEvents.index(of: newItem) {
+//            let indexPath = NSIndexPath(row: index, section: 0)
+//            saveIndex = indexPath
+//            print("!\(saveIndex)")
+//            
+//            // Insert this new row into the table.
+//            tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
+//        }
         
-        // Figure out where that item is in the array
-        if let index = eventStore.allEvents.index(of: newItem) {
-            let indexPath = NSIndexPath(row: index, section: 0)
-            
-            // Insert this new row into the table.
-            tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
-        }
+       
+        
+        //let cell = tableView(tableView, cellForRowAt: saveIndex as IndexPath)
+        
+        performSegue(withIdentifier: "showDetail", sender: nil)
+        
     }
     
     override func tableView(_ tableView: UITableView,
@@ -123,18 +139,42 @@ class EventsViewController : UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(#function)
         if segue.identifier == "showDetail" {
-            let myCell = sender as! UITableViewCell
-            //figure out which row was tapped
-            if let indexPath = self.tableView.indexPath(for: myCell) {
-                editIndexPath = indexPath
-                //get item associated and pass it along
-                let event = eventStore.allEvents[indexPath.row]
+            if sender != nil {
+                let cell = sender as! UITableViewCell
+                let indexPath = self.tableView.indexPath(for: cell)
+                let event = eventStore.allEvents[indexPath!.row]
                 let editViewController = segue.destination as! DetailViewController
                 editViewController.event = event
+            } else {
+                let newItem = eventStore.createEvent()
+                
+                // Figure out where that item is in the array
+                if let index = eventStore.allEvents.index(of: newItem) {
+                    let indexPath = NSIndexPath(row: index, section: 0)
+                    
+                    // Insert this new row into the table.
+                    tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
+                    let editViewController = segue.destination as! DetailViewController
+                    editViewController.event = newItem
+                }
             }
         }
+        
+            
+//            if let myCell = sender {
+//            let myCell = sender as! UITableViewCell
+//            //figure out which row was tapped
+//            
+//            if let indexPath = self.tableView.indexPath(for: myCell) {
+//                print("gets here")
+//                editIndexPath = indexPath
+//                //get item associated and pass it along
+//                let event = eventStore.allEvents[indexPath.row]
+//                let editViewController = segue.destination as! DetailViewController
+//                editViewController.event = event
+//            }
+//        }
     }
 
     

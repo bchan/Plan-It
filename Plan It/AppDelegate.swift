@@ -61,3 +61,13 @@ func ==(left: Day, right: Day) -> Bool {
     }
 }
 
+func ==(left: Event, right: Event) -> Bool {
+    if left.date == right.date && left.date == right.date {
+        return true
+    } else {
+        return false
+    }
+}
+
+
+
