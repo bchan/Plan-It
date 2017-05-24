@@ -17,8 +17,4 @@ class DayCell : UITableViewCell {
     @IBOutlet var event2: UILabel!
     @IBOutlet var event3: UILabel!
 
-    var date = NSDate()
-    
-    
-
 }
