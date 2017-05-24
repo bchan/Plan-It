@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Event: NSObject, NSCoding {
+class Event : NSObject, NSCoding {
     
     var name: String
     var date: Date

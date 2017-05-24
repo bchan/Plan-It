@@ -14,11 +14,6 @@ class EventsViewController : UITableViewController {
     var eventStore: EventStore!
     var editIndexPath: IndexPath?
     
-    
-    
-    
-    
-    
     func addAlarmImage(label: UILabel) {
         let attachment = NSTextAttachment()
         attachment.image = UIImage(named: "quickaction_icon_alarm_2x.png")
@@ -213,6 +208,12 @@ class EventsViewController : UITableViewController {
 //                editViewController.event = event
 //            }
 //        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        let parentVC = self.parent
+        let weeklyVC = parentVC?.parent?.childViewControllers[0].childViewControllers[0] as! WeeklyViewController
+        weeklyVC.eventStore = eventStore
     }
 
     

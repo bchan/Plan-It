@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Day: Equatable, CustomStringConvertible {
+class Day : Equatable, CustomStringConvertible {
     
     let date: Date
     
