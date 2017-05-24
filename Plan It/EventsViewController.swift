@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import UserNotifications
+import UserNotificationsUI
 
 class EventsViewController : UITableViewController {
     
@@ -47,13 +49,13 @@ class EventsViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 100.0
-        addAlarm()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         eventStore.allEvents.sort(by: {$0.date.compare($1.date) == .orderedAscending})
         tableView.reloadData()
+        
     }
     
     override func tableView(_ tableView: UITableView,
@@ -157,6 +159,10 @@ class EventsViewController : UITableViewController {
             }
         }
     }
+    
+    
+    
+    
 //
 //        @IBAction func speedSlider(sender: UISlider) {
 //            if colonyView.colony != nil {
@@ -169,15 +175,7 @@ class EventsViewController : UITableViewController {
 //                }
 //            }
 //        }
-        
-        func addAlarm() {
-            let ac = UIAlertController(title: "Alarm", message: "Need more time or done?", preferredStyle: .alert)
-            let needMoreTime = UIAlertAction(title: "Need Time", style: .default, handler: nil)
-            ac.addAction(needMoreTime)
-            let done = UIAlertAction(title: "Done", style: .default, handler: nil)
-            ac.addAction(done)
-            self.present(ac, animated: true, completion: nil)
-        }
+
         
         
             // old way

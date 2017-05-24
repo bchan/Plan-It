@@ -9,6 +9,8 @@
 import Foundation
 import EventKit
 import UIKit
+import UserNotifications
+import UserNotificationsUI
 
 class WeeklyViewController: UITableViewController, UIGestureRecognizerDelegate {
         
@@ -16,6 +18,7 @@ class WeeklyViewController: UITableViewController, UIGestureRecognizerDelegate {
     var currentWeek = [Day]()
     var tabBarVC: UITabBarController!
     var eventStore: EventStore!
+    
     
     @IBAction func shiftLeft(_ sender: UIBarButtonItem) {
         let sunday = currentWeek[0]
@@ -50,6 +53,7 @@ class WeeklyViewController: UITableViewController, UIGestureRecognizerDelegate {
     }
     
     override func viewDidLoad() {
+        testing()
         super.viewDidLoad()
         dayStore.addWeek(date: Date())
         currentWeek = dayStore.getWeek(date: Date())
@@ -192,7 +196,31 @@ class WeeklyViewController: UITableViewController, UIGestureRecognizerDelegate {
         return true
     }
     
-    
+
+    func testing() {
+        var dateComponents = DateComponents()
+        dateComponents.year = 2017
+        dateComponents.month = 5
+        dateComponents.day = 24
+        dateComponents.hour = 9
+        dateComponents.minute = 35
+        
+        //let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        
+        let center = UNUserNotificationCenter.current()
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Alarm"
+        content.body = "Do you need more time?"
+        content.categoryIdentifier = "alar"
+        content.sound = UNNotificationSound.default()
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        center.add(request)
+        
+    }
     
     
     
