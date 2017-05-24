@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-//    var eventStore: EventStore! = nil
+    var eventStore = EventStore()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let eventViewController = navController2?.childViewControllers[0] as! EventsViewController
         let eventStore = EventStore()
         eventViewController.eventStore = eventStore
+        weeklyController.eventStore = eventStore
         
         return true
     }
@@ -44,10 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navController = tabBarViewController?.childViewControllers[2]
         let eventsController = navController?.childViewControllers[0] as! EventsViewController
         let success = eventsController.eventStore.saveChanges()
-        if (success) {
-            print("Saved all of the Items")
+        if success {
+//            print("Saved all of the Items")
         } else {
-            print("Could not save any of the Items")
+//            print("Could not save any of the Items")
         }
     }
     func applicationWillEnterForeground(_ application: UIApplication) {

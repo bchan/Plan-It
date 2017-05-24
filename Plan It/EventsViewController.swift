@@ -209,6 +209,12 @@ class EventsViewController : UITableViewController {
 //            }
 //        }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        let parentVC = self.parent
+        let weeklyVC = parentVC?.parent?.childViewControllers[0].childViewControllers[0] as! WeeklyViewController
+        weeklyVC.eventStore = eventStore
+    }
 
     
     

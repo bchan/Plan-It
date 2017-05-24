@@ -63,7 +63,14 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         event.alarm = alarmSwitch.isOn
         event.date = datePicker.date
         event.endDate = datePicker2.date
-        
+
+//        if event.endDate <= event.date {
+//            print("1")
+//            event.endDate = datePicker2.date
+//        } else {
+//            print("2")
+//            event.endDate = event.date
+//        }
         
     }
     
