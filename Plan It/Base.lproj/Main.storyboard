@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cSf-yR-gZZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cSf-yR-gZZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,6 +23,7 @@
                         <segue destination="1pr-qq-vNs" kind="relationship" relationship="viewControllers" id="8Uz-Ee-mLa"/>
                         <segue destination="k8r-xa-wEu" kind="relationship" relationship="viewControllers" id="bSE-rb-hZp"/>
                         <segue destination="3cf-Bf-TRA" kind="relationship" relationship="viewControllers" id="TEM-7q-TLB"/>
+                        <segue destination="AsN-1w-6MO" kind="relationship" relationship="viewControllers" id="baf-Oq-Mjk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6I1-fs-BbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -260,7 +261,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dcZ-Ul-WSn">
-                                <rect key="frame" x="16" y="28" width="343" height="579"/>
+                                <rect key="frame" x="16" y="72" width="343" height="579"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MID-gI-CKw">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -431,11 +432,50 @@
             </objects>
             <point key="canvasLocation" x="28" y="1269.7151424287856"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="r4I-kS-jta">
+            <objects>
+                <viewController id="TMx-1Q-3eY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tVI-9N-DXE"/>
+                        <viewControllerLayoutGuide type="bottom" id="OrK-H6-8Xx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tQv-eO-5wf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="q8B-f0-sqo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JXv-tJ-hlv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="967.20000000000005" y="2000.1499250374814"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="YcL-xm-jKR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AsN-1w-6MO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="Webp.net-resizeimage-2" selectedImage="Webp.net-resizeimage-2" id="h3t-TP-GiH"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iWZ-P9-p7q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TMx-1Q-3eY" kind="relationship" relationship="rootViewController" id="FVg-MO-Pam"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="njT-58-ihQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28" y="2000.1499250374814"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Webp.net-resizeimage" width="28" height="27"/>
         <image name="Webp.net-resizeimage (1)" width="28" height="27"/>
         <image name="Webp.net-resizeimage-1" width="28" height="27"/>
+        <image name="Webp.net-resizeimage-2" width="28" height="27"/>
         <image name="quickaction_icon_confirmation_2x" width="28" height="27"/>
         <image name="quickaction_icon_date_2x" width="28" height="27"/>
     </resources>
