@@ -45,13 +45,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        tabBarViewController?.navigationController?.navigationBar.barTintColor = UIColor.cyan
         // ^^doesn't do anything...
         
-        UINavigationBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green: 129.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green: 100.0/255.0, blue: 225.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
-        UIBarButtonItem.appearance().tintColor = UIColor(red: 0.0/255.0, green: 129.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        UIBarButtonItem.appearance().tintColor = UIColor.white
 //        UINavigationBar.appearance().tintColor = UIColor.clearColor
 //        
 //        UINavigationBar.appearance().barTintColor = UIColor.cyan
         UINavigationBar.appearance().isTranslucent = false
+        
+        
+        UIApplication.shared.statusBarStyle = .lightContent
         
         return true
     }

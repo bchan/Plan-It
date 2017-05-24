@@ -163,6 +163,7 @@ class WeeklyViewController: UITableViewController, UIGestureRecognizerDelegate {
             dailyVC.currentDay = currentWeek[indexPath!.row]
             backItem.title = "Week"
             navigationItem.backBarButtonItem = backItem
+            navigationItem.backBarButtonItem?.tintColor = .white
             
         }
     }

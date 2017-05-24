@@ -75,6 +75,10 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.tintColor = UIColor.white
+    }
+    
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }

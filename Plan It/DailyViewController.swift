@@ -22,12 +22,12 @@ class DailyViewController : UITableViewController {
             navigationItem.title = "\(today.dayOfWeek), \(today.month) \(String(today.dateNumber)), \(Calendar.current.component(.year, from: today.date))"
         }
         tableView.reloadData()
+        navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 100.0
-        
     }
     
     let comparisonDateFormatter: DateFormatter = {
@@ -69,7 +69,7 @@ class DailyViewController : UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DailyCell",
                                                  for: indexPath as IndexPath) as! DailyCell
         
-        
+        cell.selectionStyle = .none
         // Set the text on the cell with the description of the item
         // that is at the nth index of items, where n = row this cell
         // will appear in on the tableview
@@ -86,6 +86,7 @@ class DailyViewController : UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
     }
+    
     
     
 }

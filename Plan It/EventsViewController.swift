@@ -47,6 +47,7 @@ class EventsViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 100.0
+        addAlarm()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -155,6 +156,29 @@ class EventsViewController : UITableViewController {
                 }
             }
         }
+    }
+//
+//        @IBAction func speedSlider(sender: UISlider) {
+//            if colonyView.colony != nil {
+//                timer.invalidate()
+//                let currentSpeed = NSTimeInterval(sender.value)
+//                if currentSpeed == 0 {
+//                    timer.invalidate()
+//                } else {
+//                    timer = NSTimer.scheduledTimerWithTimeInterval(1 - currentSpeed, target: self, selector: "evolveColony", userInfo: nil, repeats: true)
+//                }
+//            }
+//        }
+        
+        func addAlarm() {
+            let ac = UIAlertController(title: "Alarm", message: "Need more time or done?", preferredStyle: .alert)
+            let needMoreTime = UIAlertAction(title: "Need Time", style: .default, handler: nil)
+            ac.addAction(needMoreTime)
+            let done = UIAlertAction(title: "Done", style: .default, handler: nil)
+            ac.addAction(done)
+            self.present(ac, animated: true, completion: nil)
+        }
+        
         
             // old way
 //            if let myCell = sender {
@@ -170,7 +194,7 @@ class EventsViewController : UITableViewController {
 //                editViewController.event = event
 //            }
 //        }
-    }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         let parentVC = self.parent
