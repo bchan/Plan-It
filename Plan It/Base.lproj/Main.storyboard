@@ -123,9 +123,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1pr-qq-vNs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Weekly" image="Webp.net-resizeimage" selectedImage="Webp.net-resizeimage" id="UAt-nn-7QE"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k0Z-20-FBW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="k0Z-20-FBW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="0.50499131944444442" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -74,7 +74,6 @@ class DailyViewController : UITableViewController {
         // that is at the nth index of items, where n = row this cell
         // will appear in on the tableview
 
-        print(events.count)
         let event = events[indexPath.row]
         
         cell.eventNameLabel.text = event.name
