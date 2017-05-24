@@ -84,7 +84,7 @@ class WeeklyViewController: UITableViewController, UIGestureRecognizerDelegate {
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Create an instance of UITableViewCell, with default appearance
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath) as! DayCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DayCell", for: indexPath) as! DayCell
         
         
         // Set the text on the cell with the description of the item
@@ -159,6 +159,7 @@ class WeeklyViewController: UITableViewController, UIGestureRecognizerDelegate {
             let dailyVC = segue.destination as! DailyViewController
             let indexPath = self.tableView.indexPathForSelectedRow
             
+            dailyVC.eventStore = eventStore
             dailyVC.currentDay = currentWeek[indexPath!.row]
             backItem.title = "Week"
             navigationItem.backBarButtonItem = backItem

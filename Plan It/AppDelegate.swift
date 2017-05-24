@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let navController2 = tabBarViewController?.childViewControllers[2]
         let eventViewController = navController2?.childViewControllers[0] as! EventsViewController
-        let eventStore = EventStore()
+//        let eventStore = EventStore()
         eventViewController.eventStore = eventStore
         weeklyController.eventStore = eventStore
         
@@ -37,6 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         settingsViewController.eventStore = eventStore
         settingsViewController.dayStore = dayStore
         settingsViewController.weeklyViewController = weeklyController
+        
+        let navController1 = tabBarViewController?.childViewControllers[1]
+        let dailyController = navController1?.childViewControllers[0] as! DailyViewController
+        dailyController.eventStore = eventStore
         
         return true
     }

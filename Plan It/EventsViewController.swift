@@ -94,7 +94,7 @@ class EventsViewController : UITableViewController {
     
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/yyyy HH:mm"
+        formatter.dateFormat = "M/dd/yyyy h:mm a"
         return formatter
     }()
     
@@ -176,6 +176,8 @@ class EventsViewController : UITableViewController {
         let parentVC = self.parent
         let weeklyVC = parentVC?.parent?.childViewControllers[0].childViewControllers[0] as! WeeklyViewController
         weeklyVC.eventStore = eventStore
+        let dailyVC = parentVC?.parent?.childViewControllers[1].childViewControllers[0] as! DailyViewController
+        dailyVC.eventStore = eventStore
     }
 
     

@@ -2,8 +2,8 @@
 //  SettingsViewController.swift
 //  Plan It
 //
-//  Created by Benjamin Chan on 5/24/17.
-//  Copyright © 2017 Benjamin Chan. All rights reserved.
+//  Created on 5/24/2017.
+//  Copyright © 2017. All rights reserved.
 //
 
 import UIKit
