@@ -41,14 +41,11 @@ class WeeklyViewController: UITableViewController, UIGestureRecognizerDelegate {
         let newDay = Day(calendar.date(byAdding: components, to: sunday.date)!)
         if dayStore.isDayInArray(date: newDay.date) {
             currentWeek = dayStore.getWeek(date: newDay.date)
-            print("deez")
             self.tableView.reloadData()
         } else {
             dayStore.addWeek(date: newDay.date)
             currentWeek = dayStore.getWeek(date: newDay.date)
             self.tableView.reloadData()
-            print(currentWeek)
-            print("nuts")
         }
     }
     
@@ -106,7 +103,6 @@ class WeeklyViewController: UITableViewController, UIGestureRecognizerDelegate {
         navigationItem.title = "Week of \(sunday.month) \(String(sunday.dateNumber)) - \(endDay.month) \(String(endDay.dateNumber))"
         
         let events = getImportantEventsForDay(item.date)
-//        print(getImportantEventsForDay(item.date))
         
         cell.dateLabel.text = String(item.dateNumber)
         cell.dayOfTheWeek.text = item.dayOfWeek
@@ -132,7 +128,7 @@ class WeeklyViewController: UITableViewController, UIGestureRecognizerDelegate {
             cell.event2.text = ""
             cell.event3.text = ""
         }
-    
+// old way with title and subtitle
 //        cell.textLabel?.text = String(item.dateNumber)
 //        cell.detailTextLabel?.text = item.dayOfWeek
         return cell

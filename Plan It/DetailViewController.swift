@@ -64,6 +64,7 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         event.date = datePicker.date
         event.endDate = datePicker2.date
 
+        //doesn't work
 //        if event.endDate <= event.date {
 //            print("1")
 //            event.endDate = datePicker2.date

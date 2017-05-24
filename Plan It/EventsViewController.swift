@@ -43,18 +43,10 @@ class EventsViewController : UITableViewController {
         label.attributedText = myString
     }
     
-    //    var tabBarVC: UITabBarController!
     
     override func viewDidLoad() {
-//        print(#function)
         super.viewDidLoad()
-        
         self.tableView.rowHeight = 100.0
-        
-        //eventStore = EventStore()
-        
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.estimatedRowHeight = 100
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,7 +68,6 @@ class EventsViewController : UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell",
                                                  for: indexPath as IndexPath) as! EventCell
-        //cell.selectionStyle = .none
         
         
         // Set the text on the cell with the description of the item
@@ -103,13 +94,13 @@ class EventsViewController : UITableViewController {
     
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-//        formatter.dateStyle = .medium
         formatter.dateFormat = "MM/dd/yyyy HH:mm"
         return formatter
     }()
     
     @IBAction func addNewItem(sender: AnyObject) {
         // Create a new Item and add it to the store
+        // the old way
 //        let newItem = eventStore.createEvent()
 //        var saveIndex = NSIndexPath()
 //        
@@ -123,10 +114,6 @@ class EventsViewController : UITableViewController {
 //            tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
 //        }
         
-       
-        
-        //let cell = tableView(tableView, cellForRowAt: saveIndex as IndexPath)
-        
         performSegue(withIdentifier: "showDetail", sender: nil)
         
     }
@@ -139,31 +126,6 @@ class EventsViewController : UITableViewController {
             eventStore.allEvents.remove(at: indexPath.row)
             self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableViewScrollPosition.top)
             tableView.deleteRows(at: [indexPath], with: .fade)
-//            let item = eventStore.allEvents[indexPath.row]
-//            
-//            
-//            let title = "Delete \(item.name)?"
-//            let message = "Are you sure you want to delete this item?"
-//            
-//            let ac = UIAlertController(title: title,
-//                                       message: message,
-//                                       preferredStyle: .actionSheet)
-//            
-//            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-//            ac.addAction(cancelAction)
-//            
-//            let deleteAction = UIAlertAction(title: "Delete", style: .destructive,
-//                                             handler: { (action) -> Void in
-//                                                // Remove the item from the store
-//                                                self.eventStore.removeEvent(event: item)
-//                                                
-//                                                // Also remove that row from the table view with an animation
-//                                                self.tableView.deleteRows(at: [indexPath], with: .automatic)
-//            })
-//            ac.addAction(deleteAction)
-//            
-//            // Present the alert controller
-//            present(ac, animated: true, completion: nil)
         }
     }
     
@@ -194,7 +156,7 @@ class EventsViewController : UITableViewController {
             }
         }
         
-            
+            // old way
 //            if let myCell = sender {
 //            let myCell = sender as! UITableViewCell
 //            //figure out which row was tapped

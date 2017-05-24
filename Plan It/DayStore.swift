@@ -30,7 +30,6 @@ class DayStore {
     }
     
     func addWeek(date: Date) {
-        print(#function)
         let calendar = Calendar(identifier: .gregorian)
         let components = NSDateComponents()
         if !isDayInArray(date: date) {
@@ -50,12 +49,5 @@ class DayStore {
         let sunday = getSundaysDate(date: date)
         return allDays.contains(Day(sunday))
     }
-    
-    
-//    let date1 = Date()
-//    
-//    init() {
-//        addWeek(date: date1)
-//    }
     
 }
