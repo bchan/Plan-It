@@ -34,6 +34,20 @@ class EventsViewController : UITableViewController {
 
     }
     
+    func addStarImage(label: UILabel) {
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(named: "quickaction_icon_favorite_2x.png")
+        let attachmentString = NSAttributedString(attachment: attachment)
+        let myString = NSMutableAttributedString(string: "")
+        myString.append(attachmentString)
+        label.attributedText = myString
+    }
+    
+    func deleteStarImage(label: UILabel) {
+        let myString = NSMutableAttributedString(string: "")
+        label.attributedText = myString
+    }
+    
     //    var tabBarVC: UITabBarController!
     
     override func viewDidLoad() {
@@ -67,7 +81,7 @@ class EventsViewController : UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell",
                                                  for: indexPath as IndexPath) as! EventCell
-        cell.selectionStyle = .none
+        //cell.selectionStyle = .none
         
         
         // Set the text on the cell with the description of the item
@@ -78,15 +92,13 @@ class EventsViewController : UITableViewController {
         cell.nameLabel.text = event.name
         cell.dateLabel.text = "\(dateFormatter.string(from: event.date)) to \(dateFormatter.string(from: event.endDate))"
         if event.important {
-            cell.importantLabel.text = "!"
+            addStarImage(label: cell.importantLabel)
         } else {
-            cell.importantLabel.text = ""
+            deleteStarImage(label: cell.importantLabel)
         }
         if event.alarm {
-            cell.alarmLabel.text = "Alarm On"
             addAlarmImage(label: cell.alarmImage)
         } else {
-            cell.alarmLabel.text = "Alarm Off"
             deleteAlarmImage(label: cell.alarmImage)
         }
         cell.locationLabel.text = event.location
@@ -97,7 +109,7 @@ class EventsViewController : UITableViewController {
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
 //        formatter.dateStyle = .medium
-        formatter.dateFormat = "dd MMM yyyy HH:mm"
+        formatter.dateFormat = "MM/dd/yyyy HH:mm"
         return formatter
     }()
     
