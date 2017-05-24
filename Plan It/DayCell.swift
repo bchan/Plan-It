@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DayCell: UITableViewCell {
+class DayCell : UITableViewCell {
     
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var dayOfTheWeek: UILabel!

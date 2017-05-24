@@ -25,7 +25,6 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
     }
     
     func configureView() {
-        print(#function)
         if let detail = self.event {
             if let nameField = self.nameTextField {
                 nameField.text = detail.name

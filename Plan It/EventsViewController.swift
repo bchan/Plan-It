@@ -14,11 +14,6 @@ class EventsViewController : UITableViewController {
     var eventStore: EventStore!
     var editIndexPath: IndexPath?
     
-    
-    
-    
-    
-    
     func addAlarmImage(label: UILabel) {
         let attachment = NSTextAttachment()
         attachment.image = UIImage(named: "quickaction_icon_alarm_2x.png")

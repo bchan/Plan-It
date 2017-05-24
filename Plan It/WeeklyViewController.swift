@@ -10,7 +10,7 @@ import Foundation
 import EventKit
 import UIKit
 
-class WeeklyViewController: UITableViewController {
+class WeeklyViewController : UITableViewController {
         
     var dayStore: DayStore!
     var currentWeek = [Day]()
