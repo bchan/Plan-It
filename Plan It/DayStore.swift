@@ -25,7 +25,6 @@ class DayStore {
             week.append(allDays[i])
             
         }
-        print(week)
         return week
     }
     
@@ -41,7 +40,6 @@ class DayStore {
                 allDays.append(Day(newDay))
             }
         }
-        print(allDays)
         allDays.sort(by: {$0.date.compare($1.date) == .orderedAscending})
     }
     

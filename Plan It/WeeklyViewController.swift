@@ -51,7 +51,6 @@ class WeeklyViewController: UITableViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         dayStore.addWeek(date: Date())
         currentWeek = dayStore.getWeek(date: Date())
         
