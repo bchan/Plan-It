@@ -32,6 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         eventViewController.eventStore = eventStore
         weeklyController.eventStore = eventStore
         
+        let navController3 = tabBarViewController?.childViewControllers[3]
+        let settingsViewController = navController3?.childViewControllers[0] as! SettingsViewController
+        settingsViewController.eventStore = eventStore
+        settingsViewController.dayStore = dayStore
+        settingsViewController.weeklyViewController = weeklyController
+        
         return true
     }
 

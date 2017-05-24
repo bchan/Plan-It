@@ -60,5 +60,12 @@ class EventStore {
             NSKeyedUnarchiver.unarchiveObject(withFile: itemArchiveURL.path) as? [Event] {
             allEvents += archivedItems
         }
+        
     }
+    
+    func clearEvents() {
+        allEvents = []
+    }
+    
+    
 }

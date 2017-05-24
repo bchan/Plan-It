@@ -11,6 +11,7 @@
 		270130F91E7978F3005F19C9 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270130F81E7978F3005F19C9 /* Day.swift */; };
 		270130FB1E79A57C005F19C9 /* DayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270130FA1E79A57C005F19C9 /* DayStore.swift */; };
 		2753E5431E70864B008B2FA1 /* WeeklyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2753E5421E70864B008B2FA1 /* WeeklyViewController.swift */; };
+		275B0B281ED54FC800832BC4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B0B271ED54FC800832BC4 /* SettingsViewController.swift */; };
 		27FA6AFF1E70811E00D121B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FA6AFE1E70811E00D121B9 /* AppDelegate.swift */; };
 		27FA6B011E70811E00D121B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FA6B001E70811E00D121B9 /* ViewController.swift */; };
 		27FA6B041E70811E00D121B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27FA6B021E70811E00D121B9 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		270130F81E7978F3005F19C9 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		270130FA1E79A57C005F19C9 /* DayStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayStore.swift; sourceTree = "<group>"; };
 		2753E5421E70864B008B2FA1 /* WeeklyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyViewController.swift; sourceTree = "<group>"; };
+		275B0B271ED54FC800832BC4 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		27FA6AFB1E70811E00D121B9 /* Plan It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plan It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FA6AFE1E70811E00D121B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27FA6B001E70811E00D121B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				64EBBCDF1ECE58AD00399AF0 /* EventCell.swift */,
 				64EBBCDB1ECDEDAE00399AF0 /* EventsViewController.swift */,
 				648C2A2F1ED2079600646D68 /* DetailViewController.swift */,
+				275B0B271ED54FC800832BC4 /* SettingsViewController.swift */,
 				649675901ED4E7B500663ECD /* Assets.xcassets */,
 				27FA6B071E70811E00D121B9 /* LaunchScreen.storyboard */,
 				27FA6B0A1E70811E00D121B9 /* Info.plist */,
@@ -177,6 +180,7 @@
 				270130D71E76F9CB005F19C9 /* DayCell.swift in Sources */,
 				64EBBCE21ECF3A2300399AF0 /* EventStore.swift in Sources */,
 				270130F91E7978F3005F19C9 /* Day.swift in Sources */,
+				275B0B281ED54FC800832BC4 /* SettingsViewController.swift in Sources */,
 				270130FB1E79A57C005F19C9 /* DayStore.swift in Sources */,
 				27FA6AFF1E70811E00D121B9 /* AppDelegate.swift in Sources */,
 			);

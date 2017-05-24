@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cSf-yR-gZZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cSf-yR-gZZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -435,7 +435,7 @@
         <!--Settings-->
         <scene sceneID="r4I-kS-jta">
             <objects>
-                <viewController id="TMx-1Q-3eY" sceneMemberID="viewController">
+                <viewController id="TMx-1Q-3eY" customClass="SettingsViewController" customModule="Plan_It" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tVI-9N-DXE"/>
                         <viewControllerLayoutGuide type="bottom" id="OrK-H6-8Xx"/>
@@ -445,44 +445,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="oPu-NQ-NNy">
-                                <rect key="frame" x="16" y="72" width="343" height="173"/>
+                                <rect key="frame" x="0.0" y="74" width="375" height="173"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear all events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4g-RI-1Z0">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear all events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4g-RI-1Z0">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SY-MQ-agw">
-                                        <rect key="frame" x="0.0" y="36.5" width="343" height="42"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SY-MQ-agw">
+                                        <rect key="frame" x="0.0" y="36.5" width="375" height="42"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Clear">
                                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="clearEventsWithSender:" destination="TMx-1Q-3eY" eventType="primaryActionTriggered" id="XEJ-Qt-s3H"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Return to today's date in weekly view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk6-2e-obs">
-                                        <rect key="frame" x="0.0" y="94.5" width="343" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Return to today's date in weekly view" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk6-2e-obs">
+                                        <rect key="frame" x="0.0" y="94.5" width="375" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VP3-zv-5d8">
-                                        <rect key="frame" x="0.0" y="131" width="343" height="42"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VP3-zv-5d8">
+                                        <rect key="frame" x="0.0" y="131" width="375" height="42"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Return">
                                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="resetDateWithSender:" destination="TMx-1Q-3eY" eventType="primaryActionTriggered" id="ZtX-d0-3Xg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="oPu-NQ-NNy" firstAttribute="leading" secondItem="tQv-eO-5wf" secondAttribute="leadingMargin" id="QDa-IK-Qua"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oPu-NQ-NNy" secondAttribute="trailing" id="anD-Po-HK1"/>
-                            <constraint firstItem="oPu-NQ-NNy" firstAttribute="top" secondItem="tVI-9N-DXE" secondAttribute="bottom" constant="8" id="lKS-LW-VqM"/>
+                            <constraint firstItem="oPu-NQ-NNy" firstAttribute="top" secondItem="tVI-9N-DXE" secondAttribute="bottom" constant="10" id="PaJ-Yz-kvo"/>
+                            <constraint firstItem="oPu-NQ-NNy" firstAttribute="leading" secondItem="tQv-eO-5wf" secondAttribute="leading" id="hv2-AF-UNv"/>
+                            <constraint firstAttribute="trailing" secondItem="oPu-NQ-NNy" secondAttribute="trailing" id="m6G-eQ-gnj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="q8B-f0-sqo"/>
