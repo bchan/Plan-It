@@ -21,15 +21,16 @@ class DayStore {
         var week = [Day]()
         let sunday = Day(getSundaysDate(date: date))
         let index = allDays.index(of: sunday)
-        week.append(sunday)
         for i in index!...index! + 6 {
             week.append(allDays[i])
             
         }
+        print(week)
         return week
     }
     
     func addWeek(date: Date) {
+        print(#function)
         let calendar = Calendar(identifier: .gregorian)
         let components = NSDateComponents()
         if !isDayInArray(date: date) {
@@ -41,12 +42,15 @@ class DayStore {
                 allDays.append(Day(newDay))
             }
         }
+        print(allDays)
+        allDays.sort(by: {$0.date.compare($1.date) == .orderedAscending})
     }
     
     func isDayInArray(date: Date) -> Bool {
         let sunday = getSundaysDate(date: date)
         return allDays.contains(Day(sunday))
     }
+    
     
 //    let date1 = Date()
 //    

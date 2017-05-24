@@ -10,43 +10,83 @@ import Foundation
 import EventKit
 import UIKit
 
-class WeeklyViewController: UITableViewController {
+class WeeklyViewController: UITableViewController, UIGestureRecognizerDelegate {
         
     var dayStore: DayStore!
     var currentWeek = [Day]()
     var tabBarVC: UITabBarController!
     
+    @IBAction func shiftLeft(_ sender: UIBarButtonItem) {
+        let sunday = currentWeek[0]
+        let calendar = Calendar(identifier: .gregorian)
+        var components = calendar.dateComponents([.day], from: sunday.date)
+        components.day = -7
+        let newDay = Day(calendar.date(byAdding: components, to: sunday.date)!)
+        if dayStore.isDayInArray(date: newDay.date) {
+            currentWeek = dayStore.getWeek(date: newDay.date)
+            self.tableView.reloadData()
+        } else {
+            dayStore.addWeek(date: newDay.date)
+            currentWeek = dayStore.getWeek(date: newDay.date)
+            self.tableView.reloadData()
+        }
+    }
+    
+    @IBAction func shiftRight(_ sender: UIBarButtonItem) {
+        let sunday = currentWeek[0]
+        let calendar = Calendar(identifier: .gregorian)
+        var components = calendar.dateComponents([.day], from: sunday.date)
+        components.day = 7
+        let newDay = Day(calendar.date(byAdding: components, to: sunday.date)!)
+        if dayStore.isDayInArray(date: newDay.date) {
+            currentWeek = dayStore.getWeek(date: newDay.date)
+            print("deez")
+            self.tableView.reloadData()
+        } else {
+            dayStore.addWeek(date: newDay.date)
+            currentWeek = dayStore.getWeek(date: newDay.date)
+            self.tableView.reloadData()
+            print(currentWeek)
+            print("nuts")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Get the height of the status bar
-//        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-//        
-//        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-//        tableView.contentInset = insets
-//        tableView.scrollIndicatorInsets = insets
-        
         dayStore.addWeek(date: Date())
         currentWeek = dayStore.getWeek(date: Date())
+        
+//        var swipeRight = UISwipeGestureRecognizer(target: self, action: Selector("respondToSwipeGesture:"))
+//        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+//        self.view.addGestureRecognizer(swipeRight)
+//        
+//        var swipeLeft = UISwipeGestureRecognizer(target: self, action: Selector(("respondToSwipeGesture:")))
+//        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+//        self.view.addGestureRecognizer(swipeLeft)
     }
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dayStore.allDays.count
+        return currentWeek.count
     }
+    
     
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Create an instance of UITableViewCell, with default appearance
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
         
+        
         // Set the text on the cell with the description of the item
         // that is at the nth index of items, where n = row this cell
         // will appear in on the tableview
-        let item = dayStore.allDays[indexPath.row]
-        let sunday = Day(dayStore.getSundaysDate(date: item.date))
+//        let item = dayStore.allDays[indexPath.row]
+//        let sunday = Day(dayStore.getSundaysDate(date: item.date))
+        let item = currentWeek[indexPath.row]
+        let sunday = currentWeek[0]
         let calendar = Calendar(identifier: .gregorian)
-        var components = calendar.dateComponents([.day], from: item.date)
+        var components = calendar.dateComponents([.day], from: sunday.date)
         components.day = 6
         let endDay = Day(calendar.date(byAdding: components , to: sunday.date)!)
         
@@ -64,7 +104,7 @@ class WeeklyViewController: UITableViewController {
             let dailyVC = segue.destination as! DailyViewController
             let indexPath = self.tableView.indexPathForSelectedRow
             
-            dailyVC.currentDay = dayStore.allDays[indexPath!.row]
+            dailyVC.currentDay = currentWeek[indexPath!.row]
             backItem.title = "Week"
             navigationItem.backBarButtonItem = backItem
             
@@ -81,11 +121,11 @@ class WeeklyViewController: UITableViewController {
             components.minute = 0
             components.second = 0
             let today = Day(calendar.date(from: components)!)
-            if today == dayStore.allDays[indexPath!.row] {
+            if today == currentWeek[indexPath!.row] {
                 
                 
 //                tabBarVC.tabBarController(tabBarController: tabBarVC, shouldSelectViewController: tabBarVC.childViewControllers[1])
-
+                
                 tabBarVC.selectedIndex = 1
                 
                 
@@ -94,6 +134,9 @@ class WeeklyViewController: UITableViewController {
         }
         return true
     }
+    
+    
+    
     
     
 }

@@ -37,6 +37,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" textLabel="E7s-xe-Hp6" detailTextLabel="4Cf-5M-Q0a" rowHeight="65" style="IBUITableViewCellStyleSubtitle" id="ufq-VG-88V" customClass="DayCell" customModule="Plan_It" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="65"/>
@@ -72,7 +73,18 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="ejF-JM-H7R"/>
-                    <navigationItem key="navigationItem" title="Week" id="UhS-e6-44k"/>
+                    <navigationItem key="navigationItem" title="Week" id="UhS-e6-44k">
+                        <barButtonItem key="leftBarButtonItem" image="Webp.net-resizeimage-1" id="cIs-m6-tCE">
+                            <connections>
+                                <action selector="shiftLeft:" destination="BYZ-38-t0r" id="Ag4-zX-ava"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Webp.net-resizeimage (1)" id="ExV-t4-dli">
+                            <connections>
+                                <action selector="shiftRight:" destination="BYZ-38-t0r" id="Inf-cr-5wN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -143,9 +155,15 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNt-iS-6vm">
-                                            <rect key="frame" x="46" y="13" width="209" height="21"/>
+                                            <rect key="frame" x="46" y="13" width="209" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqH-b6-OZJ">
+                                            <rect key="frame" x="8" y="12" width="28.5" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -156,13 +174,6 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7oo-yc-QLq">
-                                            <rect key="frame" x="17" y="70" width="315" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Im-pn-bTH">
                                             <rect key="frame" x="274" y="17" width="28.5" height="27"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -170,9 +181,10 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqH-b6-OZJ">
-                                            <rect key="frame" x="8" y="12" width="28.5" height="27"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7oo-yc-QLq">
+                                            <rect key="frame" x="46" y="70" width="315" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -396,10 +408,12 @@
     </scenes>
     <resources>
         <image name="Webp.net-resizeimage" width="28" height="27"/>
+        <image name="Webp.net-resizeimage (1)" width="28" height="27"/>
+        <image name="Webp.net-resizeimage-1" width="28" height="27"/>
         <image name="quickaction_icon_confirmation_2x" width="28" height="27"/>
         <image name="quickaction_icon_date_2x" width="28" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pFD-np-zhC"/>
+        <segue reference="b9u-2R-1Vq"/>
     </inferredMetricsTieBreakers>
 </document>
