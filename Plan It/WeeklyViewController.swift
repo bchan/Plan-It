@@ -12,7 +12,7 @@ import UIKit
 import UserNotifications
 import UserNotificationsUI
 
-class WeeklyViewController: UITableViewController, UNUserNotificationCenterDelegate {
+class WeeklyViewController: UITableViewController {
         
     var dayStore: DayStore!
     var currentWeek = [Day]()
@@ -53,8 +53,6 @@ class WeeklyViewController: UITableViewController, UNUserNotificationCenterDeleg
     }
     
     override func viewDidLoad() {
-        testing()
-        registerCategories()
         super.viewDidLoad()
         dayStore.addWeek(date: Date())
         currentWeek = dayStore.getWeek(date: Date())
@@ -195,70 +193,6 @@ class WeeklyViewController: UITableViewController, UNUserNotificationCenterDeleg
             }
         }
         return true
-    }
-    
-
-    func testing() {
-        var dateComponents = DateComponents()
-        dateComponents.year = 2017
-        dateComponents.month = 5
-        dateComponents.day = 24
-        dateComponents.hour = 9
-        dateComponents.minute = 35
-        
-        //let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        
-        let center = UNUserNotificationCenter.current()
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        
-        let content = UNMutableNotificationContent()
-        content.title = "Alarm"
-        content.body = "Do you need more time?"
-        content.categoryIdentifier = "alarm"
-        content.sound = UNNotificationSound.default()
-        
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        center.add(request)
-        
-    }
-    
-    func registerCategories() {
-        let center = UNUserNotificationCenter.current()
-        center.delegate = self
-        
-        let show = UNNotificationAction(identifier: "more", title: "Need More Time", options: .foreground)
-        let done = UNNotificationAction(identifier: "done", title: "Done", options: .destructive)
-        let category = UNNotificationCategory(identifier: "alarm", actions: [show, done], intentIdentifiers: [])
-        
-        center.setNotificationCategories([category])
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        // pull out the buried userInfo dictionary
-        let userInfo = response.notification.request.content.userInfo
-        
-        if let customData = userInfo["customData"] as? String {
-            print("Custom data received: \(customData)")
-            
-            switch response.actionIdentifier {
-            case UNNotificationDefaultActionIdentifier:
-                // the user swiped to unlock
-                print("Default identifier")
-                
-            case "show":
-                // the user tapped our "show more info…" button
-                print("Show more information…")
-                break
-                
-            default:
-                break
-            }
-        }
-        print("LUL")
-        
-        // you must call the completion handler when you're done
-        completionHandler()
     }
     
     

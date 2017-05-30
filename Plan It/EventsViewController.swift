@@ -11,7 +11,7 @@ import UIKit
 import UserNotifications
 import UserNotificationsUI
 
-class EventsViewController : UITableViewController {
+class EventsViewController : UITableViewController, UNUserNotificationCenterDelegate {
     
     var eventStore: EventStore!
     var editIndexPath: IndexPath?
@@ -52,8 +52,11 @@ class EventsViewController : UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        registerCategories()
         super.viewWillAppear(animated)
         eventStore.allEvents.sort(by: {$0.date.compare($1.date) == .orderedAscending})
+        clearNotifications()
+        addAllNotifications()
         tableView.reloadData()
         
     }
@@ -82,6 +85,7 @@ class EventsViewController : UITableViewController {
         cell.dateLabel.text = "\(dateFormatter.string(from: event.date)) to \(dateFormatter.string(from: event.endDate))"
         if event.important {
             addStarImage(label: cell.importantLabel)
+            addNotification(date: event.endDate)
         } else {
             deleteStarImage(label: cell.importantLabel)
         }
@@ -158,6 +162,80 @@ class EventsViewController : UITableViewController {
                 }
             }
         }
+    }
+    
+    func addNotification(date: Date) {
+        let calendar = Calendar(identifier: .gregorian)
+        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: date)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+        
+        let center = UNUserNotificationCenter.current()
+        
+        //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Alarm"
+        content.body = "Do you need more time?"
+        content.categoryIdentifier = "alarm"
+        content.sound = UNNotificationSound.default()
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        center.add(request)
+        
+    }
+    
+    func addAllNotifications() {
+        let current = Date()
+        for i in eventStore.allEvents {
+            if i.endDate >= current {
+                if i.alarm {
+                    addNotification(date: i.endDate)
+                }
+            }
+        }
+    }
+    
+    func clearNotifications() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    }
+    
+    func registerCategories() {
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        
+        let show = UNNotificationAction(identifier: "more", title: "Need More Time", options: .foreground)
+        let done = UNNotificationAction(identifier: "done", title: "Done", options: .destructive)
+        let category = UNNotificationCategory(identifier: "alarm", actions: [show, done], intentIdentifiers: [])
+        
+        center.setNotificationCategories([category])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // pull out the buried userInfo dictionary
+        let userInfo = response.notification.request.content.userInfo
+        
+        if let customData = userInfo["customData"] as? String {
+            print("Custom data received: \(customData)")
+            
+            switch response.actionIdentifier {
+            case UNNotificationDefaultActionIdentifier:
+                // the user swiped to unlock
+                print("Default identifier")
+                
+            case "more":
+                // the user tapped our "show more info…" button
+                print("Show more information…")
+                break
+                
+            default:
+                break
+            }
+        }
+        print("LUL")
+        
+        // you must call the completion handler when you're done
+        completionHandler()
     }
     
     
