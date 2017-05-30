@@ -17,13 +17,4 @@ class EventCell : UITableViewCell {
     @IBOutlet var importantLabel: UILabel!
     @IBOutlet var alarmImage: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        nameLabel.adjustsFontForContentSizeCategory = true
-        dateLabel.adjustsFontForContentSizeCategory = true
-        locationLabel.adjustsFontForContentSizeCategory = true
-        importantLabel.adjustsFontForContentSizeCategory = true
-        alarmImage.adjustsFontForContentSizeCategory = true
-    }
 }

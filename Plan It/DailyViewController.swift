@@ -38,7 +38,7 @@ class DailyViewController : UITableViewController {
     
     let timeOutputFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm a"
+        formatter.dateFormat = "h:mm a"
         return formatter
     }()
     

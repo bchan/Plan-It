@@ -67,5 +67,21 @@ class EventStore {
         allEvents = []
     }
     
+    var dtf: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return formatter
+    }()
     
+    func pushEvents(_ event: Event) {
+        let save = event.date
+        event.date.addTimeInterval(600)
+        for e in allEvents {
+            if dtf.string(from: save) == dtf.string(from: e.date) {
+                e.date.addTimeInterval(600)
+            }
+        }
+        
+
+    }
 }

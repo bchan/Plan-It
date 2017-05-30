@@ -61,17 +61,19 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         event.location = locationField.text ?? ""
         event.important = importantSwitch.isOn
         event.alarm = alarmSwitch.isOn
-        event.date = datePicker.date
-        event.endDate = datePicker2.date
+//        event.date = datePicker.date
+//        event.endDate = datePicker2.date
 
         //doesn't work
-//        if event.endDate <= event.date {
-//            print("1")
-//            event.endDate = datePicker2.date
-//        } else {
-//            print("2")
-//            event.endDate = event.date
-//        }
+        if datePicker2.date <= datePicker.date {
+            print("should default to datePicker date")
+            event.endDate = datePicker.date
+        } else if datePicker2.date > datePicker.date {
+            print("should work correctly")
+            event.endDate = datePicker2.date
+        } else {
+            print("wtf is going on")
+        }
         
     }
     
