@@ -166,7 +166,7 @@ class EventsViewController : UITableViewController, UNUserNotificationCenterDele
     
     func addNotification(date: Date) {
         let calendar = Calendar(identifier: .gregorian)
-        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: date)
+        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
         
@@ -213,10 +213,14 @@ class EventsViewController : UITableViewController, UNUserNotificationCenterDele
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         // pull out the buried userInfo dictionary
+        let calendar = Calendar(identifier: .gregorian)
         let userInfo = response.notification.request.content.userInfo
+        let trigger = response.notification.request.trigger as! UNCalendarNotificationTrigger
+        let dateComponents = trigger.dateComponents
+        let date = calendar.date(from: dateComponents)
         
-        if let customData = userInfo["customData"] as? String {
-            print("Custom data received: \(customData)")
+        //if let customData = userInfo["customData"] as? String {
+          //  print("Custom data received: \(customData)")
             
             switch response.actionIdentifier {
             case UNNotificationDefaultActionIdentifier:
@@ -224,22 +228,32 @@ class EventsViewController : UITableViewController, UNUserNotificationCenterDele
                 print("Default identifier")
                 
             case "more":
-                // the user tapped our "show more info…" button
-                print("Show more information…")
+                
+                // the user tapped our "need more time" button
+                
+                let event = eventStore.getEvent(date!)
+                eventStore.pushEvents(event)
+                tableView.reloadData()
+            case "done":
+                let event = eventStore.getEvent(date!)
+                event.alarm = false
+                tableView.reloadData()
+                
                 break
                 
             default:
                 break
             }
-        }
-        print("LUL")
+       // }
         
         // you must call the completion handler when you're done
         completionHandler()
     }
     
     
-    
+    func getEvent(date: Date) {
+        
+    }
     
 //
 //        @IBAction func speedSlider(sender: UISlider) {

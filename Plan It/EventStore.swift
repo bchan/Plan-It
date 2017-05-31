@@ -80,12 +80,17 @@ class EventStore {
         return false
     }
     
+    func getEvent(_ date: Date) -> Event {
+        let event = allEvents.filter{$0.endDate == date}
+        return event[0]
+    }
+    
     func pushEvents(_ event: Event) {
         let save = event.date
-        event.date.addTimeInterval(600)
+        event.endDate.addTimeInterval(600)
         for e in allEvents {
             if dtf.string(from: save) == dtf.string(from: e.date) {
-                e.date.addTimeInterval(600)
+                e.endDate.addTimeInterval(600)
                 for f in allEvents {
                     if e.endDate == f.date {
                         f.date.addTimeInterval(600)

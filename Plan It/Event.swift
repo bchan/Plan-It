@@ -27,7 +27,7 @@ class Event : NSObject, NSCoding {
     }
     
     override var description: String {
-        return "name: \(name); date: \(date); location: \(location); important: \(important); alarm: \(alarm)"
+        return "name: \(name); date: \(date); location: \(location); important: \(important); alarm: \(alarm) endDate: \(endDate)"
     }
     
     func encode(with aCoder: NSCoder) {
