@@ -90,22 +90,21 @@ class EventStore {
         event.endDate.addTimeInterval(600)
         for e in allEvents {
             if dtf.string(from: save) == dtf.string(from: e.date) {
+                e.date.addTimeInterval(600)
                 e.endDate.addTimeInterval(600)
                 for f in allEvents {
-                    if e.endDate == f.date {
+                    if dtf.string(from: e.endDate) == dtf.string(from: f.date) {
                         f.date.addTimeInterval(600)
+                        f.endDate.addTimeInterval(600)
                         for g in allEvents {
-                            if f.endDate == g.date {
+                            if dtf.string(from: f.endDate) == dtf.string(from: g.date) {
                                 g.date.addTimeInterval(600)
+                                g.endDate.addTimeInterval(600)
                                 for h in allEvents {
-                                    if g.endDate == h.date {
+                                    if dtf.string(from: g.endDate) == dtf.string(from: h.date) {
                                         h.date.addTimeInterval(600)
-                                        for i in allEvents {
-                                            if h.endDate == i.date {
-                                                i.date.addTimeInterval(600)
-                                                print("too many events pushed! try again later")
-                                            }
-                                        }
+                                        h.endDate.addTimeInterval(600)
+                                        print("too many events pushed! try again later")
                                     }
                                 }
                             }
