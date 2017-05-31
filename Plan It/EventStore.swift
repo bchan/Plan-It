@@ -73,15 +73,41 @@ class EventStore {
         return formatter
     }()
     
+    func pushHelper(_ first: Date, _ second: Date)-> Bool {
+        if dtf.string(from: first) == dtf.string(from: second) {
+            return true
+        }
+        return false
+    }
+    
     func pushEvents(_ event: Event) {
         let save = event.date
         event.date.addTimeInterval(600)
         for e in allEvents {
             if dtf.string(from: save) == dtf.string(from: e.date) {
                 e.date.addTimeInterval(600)
+                for f in allEvents {
+                    if e.endDate == f.date {
+                        f.date.addTimeInterval(600)
+                        for g in allEvents {
+                            if f.endDate == g.date {
+                                g.date.addTimeInterval(600)
+                                for h in allEvents {
+                                    if g.endDate == h.date {
+                                        h.date.addTimeInterval(600)
+                                        for i in allEvents {
+                                            if h.endDate == i.date {
+                                                i.date.addTimeInterval(600)
+                                                print("too many events pushed! try again later")
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
-        
-
     }
 }

@@ -153,8 +153,6 @@ class WeeklyViewController: UITableViewController {
         }
         return result
     }
-    
-
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDay" {
@@ -194,8 +192,6 @@ class WeeklyViewController: UITableViewController {
         }
         return true
     }
-    
-    
     
 }
 
